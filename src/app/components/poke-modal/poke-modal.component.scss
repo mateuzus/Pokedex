@@ -1,0 +1,62 @@
+.poke-image {
+  height: 20vh;
+  width: auto;
+  margin: auto;
+  display: block;
+}
+
+.poke-name {
+  margin-top: 20px;
+  font-size: 7vw;
+  margin: auto;
+  display: block;
+  text-transform: capitalize;
+  font-weight: bolder;
+}
+
+.item-badge {
+  display: flex !important;
+  justify-content: center !important;
+  flex: 1 1 0% !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  align-self: stretch !important;
+  text-overflow: ellipsis !important;
+  overflow: inherit !important;
+  box-sizing: border-box !important;
+}
+
+h5 {
+  color: purple;
+  font-weight: bolder !important;
+}
+
+.item-attr {
+  margin: 10px 0px 10px 0px;
+}
+
+.stats {
+  margin: 20px 0px 20px 0px;
+}
+
+.progress-bar {
+  margin-left: 10px;
+}
+
+.stat-title {
+  color: black;
+}
+
+.progress-bar {
+  padding: 4px;
+  min-width: 10%;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background-color: #f63a0f;
+  transition: 2s linear;
+  transition-property: width, background-color;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+}

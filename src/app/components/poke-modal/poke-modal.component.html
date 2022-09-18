@@ -1,0 +1,59 @@
+<ion-row>
+  <img class="poke-image" [src]="imagePokemon" alt="Imagem do Pokemon">
+</ion-row>
+
+<ion-row>
+  <ion-text class="poke-name">{{ namePokemon }}</ion-text>
+</ion-row>
+
+<ion-grid>
+  <ion-row class="row-types">
+    <ion-col col-12>
+      <ion-card padding class="item-badge">
+        <ion-item text-center>
+          <ion-badge class="tag" mode="ios" *ngFor="let type of types" style="margin-right: 5px">{{ type['type'].name }}
+          </ion-badge>
+        </ion-item>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-list>
+    <ion-item class="item-attr">
+      <h4>Height: </h4>
+      <h5> {{ pokeHeight }} </h5>
+    </ion-item>
+    <ion-item class="item-attr">
+      <h4>Weight: </h4>
+      <h5> {{ pokeWeight }} </h5>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      Abilities
+    </ion-list-header>
+    <ion-item button (click)="loadAbilitie(abilitie)" *ngFor="let abilitie of abilities">
+      <ion-label>{{ abilitie.ability.name }}</ion-label>
+      <ion-icon name="information-circle" slot="end"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header class="stats">
+      Stats
+    </ion-list-header>
+
+    <ion-item *ngFor="let stat of stats" button (click)="presentPopover(stat)">
+      <h5 class="stat-title">{{ stat.stat.name }}</h5>
+      <ion-progress-bar class="progress-bar" [value]="stat.base_stat / 100">
+      </ion-progress-bar>
+      <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false">
+        <ng-template>
+          <ion-content class="ion-padding">{{ statName + ': ' + statAttr }}</ion-content>
+        </ng-template>
+      </ion-popover>
+    </ion-item>
+  </ion-list>
+
+</ion-grid>
